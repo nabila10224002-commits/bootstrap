@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Learning Hub</title>
+    
+    <!-- Bootstrap 5 CSS & Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --accent-cyan: #06b6d4;
+            --accent-amber: #f59e0b;
+            --accent-emerald: #10b981;
+            --bg-light: #f8fafc;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: #334155;
+        }
+
+        code, pre {
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Hero Header Styling */
+        .hero-banner {
+            background: var(--primary-gradient);
+            border: none;
+            box-shadow: 0 20px 30px -10px rgba(99, 102, 241, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        /* Card Enhancements */
+        .custom-card {
+            background: #ffffff;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -10px rgba(99, 102, 241, 0.12);
+        }
+
+        /* Icon Badge Wrappers */
+        .icon-box {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .icon-box-indigo { background: #e0e7ff; color: #4338ca; }
+        .icon-box-cyan   { background: #cffafe; color: #0891b2; }
+        .icon-box-rose   { background: #ffe4e6; color: #e11d48; }
+        .icon-box-amber  { background: #fef3c7; color: #d97706; }
+        .icon-box-emerald{ background: #d1fae5; color: #059669; }
+
+        /* Custom Code Blocks */
+        .code-container {
+            background-color: #0f172a !important;
+            border-radius: 0.85rem;
+            border: 1px solid #1e293b;
+        }
+
+        /* Feature Images */
+        .img-cover {
+            object-fit: cover;
+            border-radius: 0.85rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .btn-gradient {
+            background: var(--primary-gradient);
+            color: #fff;
+            border: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-gradient:hover {
+            color: #fff;
+            opacity: 0.92;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="py-4 py-md-5">
+
+    <div class="container" style="max-width: 960px;">
+        
+        <!-- Header / Hero Section -->
+        <header class="hero-banner p-4 p-md-5 mb-5 rounded-4 text-white shadow-lg">
+            <div class="row align-items-center g-4">
+                <div class="col-md-7 text-center text-md-start">
+                    <span class="badge bg-white bg-opacity-25 text-white px-3 py-2 rounded-pill fw-semibold mb-3">
+                        <i class="bi bi-stars me-1"></i> Interactive Developer Guide
+                    </span>
+                    <h1 class="display-4 fw-extrabold mb-3 text-white">🌐 HTML5 Learning Project</h1>
+                    <p class="fs-5 fw-normal mb-0 text-white-50">Master the foundation of the modern web with bright, practical code examples.</p>
+                </div>
+                <div class="col-md-5 text-center">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=600&q=80" alt="Coding Web Development" class="img-fluid rounded-4 shadow-lg border border-2 border-white border-opacity-25">
+                </div>
+            </div>
+        </header>
+
+        <main class="d-flex flex-column gap-4">
+            
+            <!-- Section 1: What is HTML? -->
+            <section class="custom-card p-4 p-md-5">
+                <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+                    <div class="icon-box icon-box-indigo">
+                        <i class="bi bi-rocket-takeoff-fill"></i>
+                    </div>
+                    <h2 class="h3 fw-bold mb-0 text-dark">What is HTML?</h2>
+                </div>
+
+                <div class="row align-items-center g-4 mb-4">
+                    <div class="col-lg-7">
+                        <p class="lead fs-6 text-secondary">
+                            <strong class="text-dark">HTML (HyperText Markup Language)</strong> is the standard markup language for building web pages. It serves as the structural skeleton for every website on the Internet.
+                        </p>
+                        
+                        <h5 class="fw-bold mt-4 text-dark fs-6 text-uppercase tracking-wide">Key Concepts</h5>
+                        <ul class="list-group list-group-flush mb-0">
+                            <li class="list-group-item bg-transparent px-0"><strong class="text-indigo me-1">HyperText:</strong> Interactive text that links to other documents or media.</li>
+                            <li class="list-group-item bg-transparent px-0"><strong class="text-indigo me-1">Markup:</strong> Tags and annotations that specify layout and structure.</li>
+                            <li class="list-group-item bg-transparent px-0"><strong class="text-indigo me-1">Language:</strong> Standardized syntax understood by all web browsers.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Developer Laptop Workstation" class="img-fluid img-cover w-100">
+                    </div>
+                </div>
+
+                <h3 class="h5 fw-bold text-dark mt-2">🏗️ How HTML Syntax Works</h3>
+                <p class="text-secondary">
+                    HTML uses <strong>tags</strong> to wrap content. Tags are enclosed in angle brackets like <code class="bg-light text-indigo px-2 py-1 rounded border">&lt;tagname&gt;</code>. Most elements require an opening tag and a closing tag:
+                </p>
+                <div class="code-container p-3 position-relative overflow-x-auto shadow-sm">
+                    <span class="badge bg-primary position-absolute top-0 end-0 m-3">HTML5</span>
+                    <pre class="mb-0"><code class="text-info font-monospace">&lt;tagname&gt;Your content goes here&lt;/tagname&gt;
+&lt;h1&gt;Welcome to My Site&lt;/h1&gt;
+&lt;p&gt;This is an example paragraph.&lt;/p&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 2: Basic HTML Structure -->
+            <section class="custom-card p-4 p-md-5">
+                <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+                    <div class="icon-box icon-box-cyan">
+                        <i class="bi bi-layers-fill"></i>
+                    </div>
+                    <h2 class="h3 fw-bold mb-0 text-dark">Basic HTML Structure</h2>
+                </div>
+                <p class="text-secondary mb-3">Every standard HTML5 document follows this minimal scaffold:</p>
+                
+                <div class="code-container p-3 position-relative overflow-x-auto shadow-sm mb-4">
+                    <span class="badge bg-info text-dark position-absolute top-0 end-0 m-3 fw-bold">Template</span>
+                    <pre class="mb-0"><code class="text-warning font-monospace">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;This is my first web page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <h5 class="fw-bold text-dark mb-3">Structural Breakdown:</h5>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="p-3 rounded-3 bg-light border">
+                            <code class="text-primary fw-bold">&lt;!DOCTYPE html&gt;</code>
+                            <p class="mb-0 text-secondary small mt-1">Declares document type as standard HTML5.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 rounded-3 bg-light border">
+                            <code class="text-primary fw-bold">&lt;html&gt;</code>
+                            <p class="mb-0 text-secondary small mt-1">Root container for all document markup.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 rounded-3 bg-light border">
+                            <code class="text-primary fw-bold">&lt;head&gt;</code>
+                            <p class="mb-0 text-secondary small mt-1">Stores metadata, title, scripts, and CSS links.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 rounded-3 bg-light border">
+                            <code class="text-primary fw-bold">&lt;body&gt;</code>
+                            <p class="mb-0 text-secondary small mt-1">Contains all visible elements rendered in browser.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Essential HTML Tags -->
+            <section class="custom-card p-4 p-md-5">
+                <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+                    <div class="icon-box icon-box-rose">
+                        <i class="bi bi-tags-fill"></i>
+                    </div>
+                    <h2 class="h3 fw-bold mb-0 text-dark">Essential HTML Tags</h2>
+                </div>
+
+                <div class="table-responsive my-3">
+                    <table class="table table-hover align-middle border rounded-3 overflow-hidden">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Tag Name</th>
+                                <th>Purpose</th>
+                                <th>Syntax Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code class="text-dark bg-light px-2 py-1 rounded border">&lt;h1&gt; - &lt;h6&gt;</code></td>
+                                <td>Headings (H1 highest level to H6 lowest)</td>
+                                <td><code>&lt;h1&gt;Main Title&lt;/h1&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="text-dark bg-light px-2 py-1 rounded border">&lt;p&gt;</code></td>
+                                <td>Paragraphs of body text</td>
+                                <td><code>&lt;p&gt;Sample text...&lt;/p&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="text-dark bg-light px-2 py-1 rounded border">&lt;a&gt;</code></td>
+                                <td>Hyperlinks to internal/external URLs</td>
+                                <td><code>&lt;a href="url"&gt;Link&lt;/a&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="text-dark bg-light px-2 py-1 rounded border">&lt;img&gt;</code></td>
+                                <td>Embedded images with alt text</td>
+                                <td><code>&lt;img src="img.png" alt="A photo"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="text-dark bg-light px-2 py-1 rounded border">&lt;div&gt;</code></td>
+                                <td>Generic block-level division container</td>
+                                <td><code>&lt;div&gt;Content&lt;/div&gt;</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="h5 fw-bold text-dark mt-4 mb-3">🎯 Live Preview Box</h3>
+                <div class="p-4 bg-light rounded-4 border border-2 border-dashed">
+                    <h1 class="h3 text-primary mb-2">Primary Heading (H1)</h1>
+                    <h2 class="h5 text-secondary mb-3">Secondary Heading (H2)</h2>
+                    <p class="mb-3">This paragraph illustrates <strong>bold emphasis</strong> and <em>italic styling</em> directly inside a browser.</p>
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 mb-3">Sample Action Link</a>
+
+                    <div class="row g-3 mt-1">
+                        <div class="col-md-6">
+                            <h4 class="h6 fw-bold text-dark">Bullet List:</h4>
+                            <ul class="mb-0 ps-3">
+                                <li>Semantic HTML structure</li>
+                                <li>Responsive CSS frameworks</li>
+                                <li>Modern browser support</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="h6 fw-bold text-dark">Ordered List:</h4>
+                            <ol class="mb-0 ps-3">
+                                <li>Write standard HTML file</li>
+                                <li>Add Bootstrap styling</li>
+                                <li>Publish online</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Interactive Forms -->
+            <section class="custom-card p-4 p-md-5">
+                <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+                    <div class="icon-box icon-box-amber">
+                        <i class="bi bi-ui-checks"></i>
+                    </div>
+                    <h2 class="h3 fw-bold mb-0 text-dark">HTML Forms</h2>
+                </div>
+                <p class="text-secondary">Forms enable users to submit data and interact with web servers:</p>
+
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="code-container p-3 h-100 position-relative overflow-x-auto shadow-sm">
+                            <pre class="mb-0"><code class="text-success font-monospace">&lt;form&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name"&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email"&gt;
+
+  &lt;label for="msg"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="msg"&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="p-4 bg-light rounded-4 border h-100">
+                            <h3 class="h6 fw-bold mb-3 text-dark">Styled Interactive Form</h3>
+                            <form onsubmit="return false;">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label small fw-semibold">Full Name</label>
+                                    <input type="text" class="form-control form-control-sm" id="name" placeholder="John Doe">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label small fw-semibold">Email Address</label>
+                                    <input type="email" class="form-control form-control-sm" id="email" placeholder="john@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label small fw-semibold">Message</label>
+                                    <textarea class="form-control form-control-sm" id="message" rows="2" placeholder="Write message..."></textarea>
+                                </div>
+                                <button type="button" class="btn btn-gradient btn-sm w-100 rounded-pill fw-semibold shadow-sm">Send Form Data</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Project Structure -->
+            <section class="custom-card p-4 p-md-5 mb-4">
+                <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+                    <div class="icon-box icon-box-emerald">
+                        <i class="bi bi-folder-fill"></i>
+                    </div>
+                    <h2 class="h3 fw-bold mb-0 text-dark">Project Structure</h2>
+                </div>
+                <p class="text-secondary">Organizing your web development files properly ensures clean maintainability and standard path references:</p>
+
+                <div class="row align-items-center g-4">
+                    <div class="col-md-7">
+                        <div class="code-container p-3 position-relative overflow-x-auto shadow-sm">
+                            <span class="badge bg-emerald text-white position-absolute top-0 end-0 m-3" style="background:#10b981;">Tree View</span>
+                            <pre class="mb-0"><code class="text-light font-monospace">my-web-project/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+└── assets/
+    └── images/
+        ├── hero.jpg
+        └── logo.svg</code></pre>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Code workspace layout" class="img-fluid img-cover w-100">
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center py-4 text-muted small">
+            <p class="mb-0">Designed with Bootstrap 5 &amp; Custom Styling • 🌐 HTML Learning Project</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
